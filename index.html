@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Bar Using HTML, CSS and JS</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menulogo {
+            display: inline-block;
+            border: 2px solid gray;
+            border-radius: 5px;
+            background-color: lightgray;
+            padding: 5px;
+            cursor: pointer;
+            margin: 5px 5px 0px 5px;
+        }
+
+        .menulogo:hover {
+            background-color: rgb(194, 193, 193);
+        }
+
+        .closelogo {
+            display: none;
+            /* display: inline-block; */
+            border: 2px solid gray;
+            border-radius: 5px;
+            background-color: lightgray;
+            padding: 5px;
+            cursor: pointer;
+            margin: 5px 5px 0px 5px;
+        }
+
+        .closelogo:hover {
+            background-color: rgb(194, 193, 193);
+        }
+
+        .uldivmenu {
+            /* display: inline-block; */
+            display: none;
+            border: 2px solid blue;
+            border-radius: 5px;
+            background-color: lightblue;
+            transition: transform 1s;
+        }
+
+        .uldivmenu:hover {
+            transform: rotate(360deg);
+        }
+
+        .uldivmenu ul.ulmenu li {
+            list-style-type: none;
+            margin-bottom: 5px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            cursor: pointer;
+        }
+
+        .ulmenu {
+            margin: 10px;
+            padding: 10px;
+            filter: brightness();
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button title="Menu" class="menulogo" onclick="show()">&#9776;</button>
+        <div class="uldivmenu">
+            <button title="Close" class="closelogo" onclick="hide()">&#128473;</button>
+            <ul class="ulmenu">
+                <li>Home</li>
+                <li>About</li>
+                <li>Cotact Us</li>
+                <li>Services</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+<script>
+    function show() {
+        document.querySelector('.menulogo').style.display = "none";
+        document.querySelector('.closelogo').style.display = "inline-block";
+        document.querySelector('.uldivmenu').style.display = "inline-block";
+    }
+    function hide() {
+        document.querySelector('.menulogo').style.display = "inline-block";
+        document.querySelector('.closelogo').style.display = "none";
+        document.querySelector('.uldivmenu').style.display = "none";
+    }
+</script>
+
+</html>
